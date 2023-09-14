@@ -89,3 +89,48 @@ public class PEMDASCalculatorByChatGPT {
         }
     }
 }
+
+/*This Java code is an implementation of a calculator that can evaluate mathematical expressions following the order of operations, also known as PEMDAS (Parentheses, Exponents, Multiplication and Division, Addition and Subtraction). Here's an explanation of how the code works:
+
+Input: The program first asks the user to input a mathematical expression, such as "2 + 3 * 4 / 2 - 1," using the Scanner class.
+
+evaluatePEMDAS() Method:
+
+evaluatePEMDAS is the main function that evaluates the mathematical expression.
+Stacks:
+
+Two stacks are used: numbers for storing numeric values and operators for storing operators.
+Parsing the Expression:
+
+The code iterates through each character of the input expression using a for loop.
+Number Processing:
+
+If the character is a digit, it begins building a number using a StringBuilder to handle multi-digit numbers and decimal points.
+It scans ahead in the expression to collect the entire number.
+The number is then parsed into a double and pushed onto the numbers stack.
+Operator Processing:
+
+If the character is one of the four basic operators (+, -, *, /), it checks for operator precedence and performs necessary calculations.
+It compares the precedence of the current operator with operators already on the operators stack.
+If the precedence of the current operator is lower, it performs calculations using operators and numbers from the stacks until the precedence is higher.
+The result is pushed back onto the numbers stack, and the current operator is pushed onto the operators stack.
+Parentheses Handling:
+
+If an opening parenthesis '(' is encountered, it is pushed onto the operators stack.
+When a closing parenthesis ')' is encountered, it performs calculations using operators and numbers from the stacks until an opening parenthesis '(' is found, and then it pops the '(' from the operators stack.
+Final Calculation:
+
+After processing all characters in the expression, it ensures that any remaining operators on the operators stack are used for final calculations.
+Error Handling:
+
+It checks for division by zero and handles it by displaying an error message and exiting the program if encountered.
+Result:
+
+The final result is the top value on the numbers stack, which is popped and returned.
+Displaying Result:
+
+The result is displayed to the user.
+Loop:
+
+The program allows the user to enter and evaluate multiple expressions by looping until the user decides to exit.
+This code provides a simple yet effective implementation of a calculator that follows the order of operations, handling parentheses, and reporting errors for division by zero.
